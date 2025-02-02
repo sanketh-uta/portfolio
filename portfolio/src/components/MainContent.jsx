@@ -291,9 +291,9 @@ function MainContent({ darkMode }) {
             contributing to impactful projects that make a difference. Outside
             of coding, I love exploring UI/UX design trends, engaging in
             open-source contributions, and mentoring aspiring developers. When
-            I'm not immersed in development, you'll often find me exploring
-            creative pursuits like photography, reading about emerging tech, or
-            participating in hackathons. With a mindset of continuous growth and
+            I'm not immersed in development, you'll often find me exploring new business ideas,
+            reading about emerging tech, or reading ancient spiritual texts and exploring the world of spirituality. And also helping people in need.
+            With a mindset of continuous growth and
             a passion for building innovative solutions, I am always excited
             about new opportunities to create and collaborate in the
             ever-evolving world of technology.
@@ -329,7 +329,8 @@ function MainContent({ darkMode }) {
               {education.map((edu, index) => (
                 <div
                   key={index}
-                  className="p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+                  className="p-4 bg-white rounded-lg shadow-md shadow-gray-200 hover:shadow-lg transition-shadow"
+
                 >
                   {/* Container that changes layout based on screen size */}
                   <div className="sm:flex sm:gap-4">
@@ -391,7 +392,8 @@ function MainContent({ darkMode }) {
               {experiences.map((exp, index) => (
                 <div
                   key={index}
-                  className="p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+                  className="p-4 bg-white rounded-lg shadow-md shadow-gray-200 hover:shadow-lg transition-shadow"
+
                 >
                   {/* Company Logo/Icon */}
                   <div className="sm:flex sm:gap-4">

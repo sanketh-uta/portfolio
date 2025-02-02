@@ -97,7 +97,7 @@ function Footer() {
 
           {/* Right Column - Contact Form */}
           <div className="bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-4">Send Me a Message</h3>
+            <h3 className="text-xl font-semibold mb-4">Send Me a Message <span className="text-emerald-400">/</span> Have any suggestion</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <input
