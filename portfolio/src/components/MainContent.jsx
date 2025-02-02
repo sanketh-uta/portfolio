@@ -71,7 +71,7 @@ function MainContent({ darkMode }) {
         "I developed a portfolio application to effectively showcase my skills, projects, and experience. The application features a responsive design, intuitive navigation, and a well-structured layout to highlight my work and professional journey.",
       image: "/portfolio.png",
       skills: ["React", "Javascript", "Tailwind CSS"],
-      projectUrl: "https://sxb3349.uta.cloud/",
+      projectUrl: "https://sanketh-bolishetti.netlify.app/",
     },
     {
       title: "Thesis Repository System - SecureVault",
