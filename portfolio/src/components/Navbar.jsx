@@ -10,10 +10,10 @@ import {
   Phone,
   Linkedin,
   Github,
-  WrenchIcon
+  WrenchIcon,
 } from "lucide-react";
 
-const Navbar = ({ darkMode, setDarkMode, onNavClick}) => {
+const Navbar = ({ darkMode, setDarkMode, onNavClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -74,7 +74,7 @@ const Navbar = ({ darkMode, setDarkMode, onNavClick}) => {
                 className="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-mono transition-colors duration-200 group"
                 onClick={(e) => {
                   e.preventDefault();
-                  onNavClick('about');
+                  onNavClick("about");
                 }}
               >
                 <User
@@ -90,7 +90,7 @@ const Navbar = ({ darkMode, setDarkMode, onNavClick}) => {
                 className="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-mono transition-colors duration-200 group"
                 onClick={(e) => {
                   e.preventDefault();
-                  onNavClick('skills');
+                  onNavClick("skills");
                 }}
               >
                 <WrenchIcon
@@ -106,7 +106,7 @@ const Navbar = ({ darkMode, setDarkMode, onNavClick}) => {
                 className="text-gray-300 text-lg hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-mono transition-colors duration-200 group"
                 onClick={(e) => {
                   e.preventDefault();
-                  onNavClick('education');
+                  onNavClick("education");
                 }}
               >
                 <School
@@ -122,7 +122,7 @@ const Navbar = ({ darkMode, setDarkMode, onNavClick}) => {
                 className="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-mono transition-colors duration-200 group"
                 onClick={(e) => {
                   e.preventDefault();
-                  onNavClick('experience');
+                  onNavClick("experience");
                 }}
               >
                 <Briefcase
@@ -138,7 +138,7 @@ const Navbar = ({ darkMode, setDarkMode, onNavClick}) => {
                 className="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-mono transition-colors duration-200 group"
                 onClick={(e) => {
                   e.preventDefault();
-                  onNavClick('projects');
+                  onNavClick("projects");
                 }}
               >
                 <Code
@@ -149,7 +149,6 @@ const Navbar = ({ darkMode, setDarkMode, onNavClick}) => {
                   Projects
                 </span>
               </a>
-           
             </div>
           </div>
 
@@ -178,6 +177,17 @@ const Navbar = ({ darkMode, setDarkMode, onNavClick}) => {
               <User className="inline mr-2 text-emerald-400" size={18} />
               <span className="text-gray-300 text-lg group-hover:text-emerald-400 transition-colors duration-200">
                 About
+              </span>
+            </a>
+            <a
+              href="#skills"
+              className="block text-gray-300 hover:text-emerald-400 hover:bg-gray-700 px-3 py-2 rounded-md text-base font-mono"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <WrenchIcon className="inline mr-2 text-emerald-400" size={18} />
+
+              <span className="text-gray-300 text-lg group-hover:text-emerald-400 transition-colors duration-200">
+                Skills
               </span>
             </a>
             <a
