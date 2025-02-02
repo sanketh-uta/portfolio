@@ -10,33 +10,25 @@ import {
   Phone,
   Linkedin,
   Github,
+  WrenchIcon
 } from "lucide-react";
 
-const Navbar = () => {
+const Navbar = ({ darkMode, setDarkMode, onNavClick}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-//   const navItems = [
-//     { label: "About", href: "#about" },
-//     { label: "Education", href: "#education" },
-//     { label: "Experience", href: "#experience" },
-//     { label: "Projects", href: "#projects" },
-//     { label: "Contact", href: "#contact" },
-//   ];
-
   return (
-    <nav className="bg-gray-800 text-gray-100 shadow-lg fixed w-full top-0 z-50 border-b border-emerald-500/30 overflow-x-hidden">
+    <nav className="fixed bg-gray-800 text-gray-100 shadow-lg fixed w-full top-0 z-50 border-b border-emerald-500/30 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center flex-wrap">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-1">
-            <div className="flex-shrink-0 flex items-center space-x-1">
+            {/* <div className="flex-shrink-0 flex items-center space-x-1">
               <a
                 href="https://www.linkedin.com/in/sanketh-bolishetti-01494b1a7/"
                 className="text-emerald-400 hover:text-emerald-500"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {/* <span className="text-emerald-400">&lt;</span> */}
                 <Linkedin
                   size={24}
                   className="inline mx-1 text-white hover:text-emerald-400 transition-colors duration-200"
@@ -53,12 +45,8 @@ const Navbar = () => {
                   size={24}
                   className="inline mx-1 text-white hover:text-emerald-400 transition-colors duration-200"
                 />
-                {/* <span className="text-emerald-400">/</span> */}
-                {/* <span className="text-emerald-400">&gt;</span> */}
               </a>
-
-              {/* Optionally, you can still include the 'Code' icon if needed */}
-            </div>
+            </div> */}
 
             <a href="#" className="text-xl font-mono font-bold group">
               <span className="text-emerald-400">&lt;</span>
@@ -67,6 +55,15 @@ const Navbar = () => {
               </span>
               <span className="text-emerald-400">/&gt;</span>
             </a>
+
+            {/* <nav className="p-4 bg-white dark:bg-gray-900 shadow-md flex justify-between items-center">
+              <button
+                onClick={() => setDarkMode(!darkMode)}
+                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-md transition"
+              >
+                {darkMode ? "Light Mode ☀️" : "Dark Mode 🌙"}
+              </button>
+            </nav> */}
           </div>
 
           {/* Desktop Navigation */}
@@ -75,6 +72,10 @@ const Navbar = () => {
               <a
                 href="#about"
                 className="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-mono transition-colors duration-200 group"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavClick('about');
+                }}
               >
                 <User
                   className="inline mr-2 text-gray-300 group-hover:text-emerald-400"
@@ -85,8 +86,28 @@ const Navbar = () => {
                 </span>
               </a>
               <a
+                href="#skills"
+                className="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-mono transition-colors duration-200 group"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavClick('skills');
+                }}
+              >
+                <WrenchIcon
+                  className="inline mr-2 text-gray-300 group-hover:text-emerald-400"
+                  size={18}
+                />
+                <span className="text-gray-300 text-lg group-hover:text-emerald-400 transition-colors duration-200">
+                  Skills
+                </span>
+              </a>
+              <a
                 href="#education"
                 className="text-gray-300 text-lg hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-mono transition-colors duration-200 group"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavClick('education');
+                }}
               >
                 <School
                   className="inline mr-2 text-gray-300 group-hover:text-emerald-400"
@@ -99,6 +120,10 @@ const Navbar = () => {
               <a
                 href="#experience"
                 className="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-mono transition-colors duration-200 group"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavClick('experience');
+                }}
               >
                 <Briefcase
                   className="inline mr-2 text-gray-300 group-hover:text-emerald-400"
@@ -111,6 +136,10 @@ const Navbar = () => {
               <a
                 href="#projects"
                 className="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-mono transition-colors duration-200 group"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavClick('projects');
+                }}
               >
                 <Code
                   className="inline mr-2 text-gray-300 group-hover:text-emerald-400"
@@ -120,18 +149,7 @@ const Navbar = () => {
                   Projects
                 </span>
               </a>
-              <a
-                href="#contact"
-                className="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-mono transition-colors duration-200 group"
-              >
-                <Phone
-                  className="inline mr-2 text-gray-300 group-hover:text-emerald-400"
-                  size={18}
-                />
-                <span className="text-gray-300 text-lg group-hover:text-emerald-400 transition-colors duration-200">
-                  Contact
-                </span>
-              </a>
+           
             </div>
           </div>
 
@@ -142,7 +160,7 @@ const Navbar = () => {
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-emerald-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-500"
             >
               <span className="sr-only">Open main menu</span>
-              {isMenuOpen ? <X size={24} /> : <Terminal size={24} />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
